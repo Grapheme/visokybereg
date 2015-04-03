@@ -1,0 +1,37 @@
+body.index {
+  header {
+    background: none;
+    hr {
+      visibility: hidden;
+    }
+  }
+  h1 {
+    font-size: 62px;
+  }
+  .about {
+    font-size: 21px;
+  }
+  .where {
+    margin-top: 34px;
+    margin-bottom: 40px;
+    .ico-mark {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+    .title {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  footer {
+    background: none;
+    .center {
+      display: none;
+    }
+    hr {
+      visibility: hidden;
+    }
+  }
+  //min-height: 580px;
+}

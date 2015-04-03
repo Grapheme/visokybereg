@@ -1,0 +1,54 @@
+body {
+  font-family: 'latolight';
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.005em;
+  color: #2a3035;
+  strong {
+    font-weight: normal;
+    font-family: 'latomedium';
+  }
+}
+
+h1 {
+  font-family: "Palatino-Roman";
+  color: #1e1e1e;
+  font-size: 30px;
+  line-height: 25px;
+  letter-spacing: 0.005em;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: "Palatino-Roman";
+  color: #1e1e1e;
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: 0.025em;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: 'latolight';
+  text-transform: uppercase;
+  color: #2a3035;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.005em;
+  font-weight: normal;
+}
+
+header, footer {
+  font-family: 'latomedium';
+  color: #183357;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.title {
+  font-family: 'latomedium';
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}

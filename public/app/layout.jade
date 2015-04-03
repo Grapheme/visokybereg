@@ -1,0 +1,81 @@
+- var bodyClass = "";
+
+block vars
+
+doctype html
+html.no-js
+  head
+    meta(charset='utf-8')
+    title Высокий берег
+    meta(name='description' content='')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+
+    // build:css styles/vendor.css
+    // bower:css
+    // endbower
+    // endbuild
+
+    // build:css styles/main.css
+    link(rel='stylesheet' href='styles/main.css')
+    // endbuild
+
+    // build:js scripts/vendor/modernizr.js
+    script(src='../bower_components/modernizr/modernizr.js')
+    // endbuild
+
+  body(class="#{bodyClass}")
+    header
+      .holder
+        a.logo(href="/")
+          img(src="images/logo.png")
+        ul.main-menu
+          li
+            a(href="") О поселке
+          li
+            a(href="") План поселка
+          li
+            a(href="") Проекты
+          li
+            a(href="") Строительство
+        a.phone(href="tel:+79034016623") +7 (903) 401-66-23
+        .clrfx
+      hr
+    block content
+
+    footer
+      hr
+      .holder
+        .left &copy; 2014, «Высокий берег»
+        .center
+          .unit
+            .title Отдел продаж
+            .row
+              a(href="tel:+79034016623") +7 (903) 401-66-23
+              span.name &nbsp; Ольга
+            .row
+              a(href="tel:+79286133928") +7 (928) 613-39-28
+              span.name &nbsp; Виктория
+          .unit
+            .title Юридический отдел
+            .row
+              a(href="tel:+79188936114") +7 (918) 893-61-14
+            .row
+              a(href="tel:+79185583314") +7 (918) 558-33-14
+          .unit
+            .title Архитектор
+            .row
+              a(href="tel:+79282263653") +7 (928) 226-36-53
+        .right Сделано в <a href="grapheme.ru">ГРАФЕМА</a>
+        .clrfx
+
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    // endbower
+    // endbuild
+
+    // build:js scripts/main.js
+    script(src='scripts/main.js')
+    script(src='scripts/footer.js')
+    // endbuild
