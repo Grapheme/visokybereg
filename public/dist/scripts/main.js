@@ -1,0 +1,1 @@
+console.log("'Allo 'Allo!"),$(function(){function i(){$("html, body").css({"min-height":"initial"}).css({"min-height":$(document).height()})}i(),$(window).resize(function(){i()})});

@@ -10,6 +10,19 @@ body {
   position: relative;
   box-sizing: border-box;
   padding-bottom: 144px;
+  &.scheme {
+    .content {
+      .holder {
+        .visual {
+          &.map {
+            margin: 0 -134px;
+            margin-top: -60px;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin clrfx() {
@@ -42,32 +55,116 @@ body {
     width: 1000px;
     margin: 0 auto;
     margin-top: 74px;
-    .row {
-      @include clrfx();
-      &>* {
-        float: left;
-      }
-      .text {
-        width: 450px;
-        margin-left: 50px;
-        margin-top: 50px;
-      }
-      .visual {
-        margin-left: -60px;
-        margin-right: -60px;
-        margin-top: 0px;
-        &.map {
-          //margin-left: -103px;
-          margin-right: 0;
+    &.col-2 {
+      .row {
+        @include clrfx();
+        &>* {
+          float: left;
         }
       }
-      &:nth-child(even) {
+      &.wside {
+        .row {
+          &.wide {
+            .visual {
+              width: auto;
+            }
+          }
+          .text {
+            width: 650px;
+          }
+          .visual {
+            width: 650px;
+            img {
+              margin: 0 -139px;
+              margin-top: -40px;
+            }
+          }
+          .side {
+            margin-top: 65px;
+            margin-left: 100px;
+            .unit {
+              margin-bottom: 36px;
+              .head {
+                img {
+                  display: inline-block;
+                  vertical-align: middle;
+                  margin-right: 10px;
+                }
+                .title {
+                  display: inline-block;
+                  vertical-align: middle;
+                }
+              }
+              ul.section {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                margin-left: 40px;
+                li {
+                  margin: 10px 0;
+                }
+                a {
+                  display: inline-block;
+                  text-decoration: none;
+                  padding-left: 10px;
+                  padding-right: 5px;
+                  &.active {
+                    border: 2px solid black;
+                    border-radius: 2px;
+
+                  }
+                }
+              }
+            }
+            .download-file {
+              text-decoration: none;
+              .ico {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+              }
+              .info {
+                display: inline-block;
+                vertical-align: middle;
+                .filename {
+                  line-height: 100%;
+                  font-size: 14px;
+                  margin-top: 5px;
+                }
+                .size {
+                  font-size: 12px;
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.chess {
         .text {
-          margin-left: 0;
-          margin-right: 50px;
+          width: 450px;
+          margin-left: 50px;
+          margin-top: 50px;
         }
         .visual {
-          margin-left: 0;
+          margin-left: -60px;
+          margin-right: -60px;
+          margin-top: 0px;
+          &.map {
+            //margin-left: -103px;
+            margin-right: 0;
+          }
+        }
+        .row {
+          &:nth-child(even) {
+            .text {
+              margin-left: 0;
+              margin-right: 50px;
+            }
+            .visual {
+              margin-left: 0;
+            }
+          }
         }
       }
     }

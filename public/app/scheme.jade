@@ -1,0 +1,68 @@
+extends layout
+
+block vars
+ - var bodyClass = "scheme";
+
+block content
+  .content
+    .holder.col-2.wside
+      .row
+        .text
+          h1 План поселка
+          p.
+            Коттеджный поселок &laquo;Высокий берег&raquo; расположен
+            в&nbsp;30&nbsp;минутной езде от&nbsp;Ростова, а&nbsp;так&nbsp;же
+            10&nbsp;минутах от&nbsp;Таганрога. Рядом&nbsp;&mdash; станция
+            электропоезда. На&nbsp;территории комплекса будут расположены
+            высокотехнологичные дома, спортивные площадки, супермаркет,
+            собственный пляж, а&nbsp;так&nbsp;же <nobr>яхт-клуб</nobr>.
+            В&nbsp;шаговой доступности находится детский сад и&nbsp;школа.
+          p.
+            Планом предусмотрено возведение таунхаусов (первая
+            очередь&nbsp;&mdash; 2015 год), а&nbsp;также отведены земли под
+            индивидуальное строительство.
+        .side
+          .unit
+            .title Площадь поселка<br>
+            strong 41 га
+          .unit
+            .title Таунхаусы
+            strong 67&mdash;141 м<sup>2</sup>
+          .unit
+            a.download-file(href="")
+              img.ico(src="/images/ico-pdf.png")
+              .info
+                .filename Генеральный план.pdf
+                .size 12мб
+      .row.wide
+        img.visual.map(src='/images/visual-map-scheme.png')
+      .row
+        .text
+          h1 Первая очередь
+          p.
+            В течении 2015 года будет возведена первая очередь с большим выбором проектов.
+            Это одноэтажные и двухэтажные таунхаусы с различной жилой площадью в едином архитектурном стиле.
+      .row.scheme
+        .visual
+          img(src="/images/visual-map-scheme-interactive.png")
+        .side
+          .unit
+            .head
+              img.ico(src="/images/ico-house-1.png")
+              .title 1 Этажные
+            ul.section
+              li
+                a.active(href="") 67 м<sup>2</sup>
+              li
+                a(href="") 75 м<sup>2</sup>
+              li
+                a(href="") 89 м<sup>2</sup>
+          .unit
+            .head
+              img.ico(src="/images/ico-house-2.png")
+              .title 2 Этажные
+            ul.section
+              li
+                a(href="") 138 м<sup>2</sup>
+              li
+                a(href="") 141 м<sup>2</sup>
