@@ -38,6 +38,17 @@ body {
       }
     }
   }
+  &.building {
+    .content {
+      &>.holder {
+        .side {
+          .unit {
+            margin-bottom: 16px !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin clrfx() {
