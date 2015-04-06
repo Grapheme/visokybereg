@@ -1,5 +1,6 @@
 /vendor
 /bootstrap/compiled.php
+=======
 node_modules
 .tmp
 .sass-cache

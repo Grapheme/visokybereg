@@ -1,0 +1,107 @@
+header {
+  background: white;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  .holder {
+    width: 1000px;
+    margin: 0 auto;
+    .logo {
+      float: left;
+      margin-top: 30px;
+      margin-bottom: 5px;
+      img {
+        width: (420/2)+px;
+      }
+    }
+    .main-menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: block;
+      float: left;
+      margin-left: 77-22px;
+      margin-top: 36px;
+      li {
+        float: left;
+        text-transform: uppercase;
+        margin: 0 22px;
+        a {
+          text-decoration: none;
+          color: #183357;
+          &.active {
+            text-decoration: underline;
+          }
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+    a.phone {
+      display: block;
+      float: right;
+      color: inherit;
+      text-decoration: inherit;
+      margin-top: 36px;
+    }
+  }
+  hr {
+    background: url('../images/tail-header.png');
+    border: none;
+    height: 7px;
+    position: relative;
+    bottom: -7px;
+  }
+}
+
+.slave-menu {
+  background: #fbfbfb;
+  padding-bottom: 74px;
+  padding-top: 40px;
+  h2 {
+    //margin-top: 60px;
+  }
+  .holder {
+    width: 1000px;
+    margin: 0 auto;
+    .row {
+      @include clrfx();
+      .type {
+        float: left;
+        width: 450px;
+        margin-right: 100px;
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+        .name {
+          margin-right: 10px;
+          .ico {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+          }
+          .title {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .unit {
+          border-radius: 2px;
+          text-decoration: none;
+          padding-left: 10px;
+          padding-right: 5px;
+          margin: 0 20px;
+          font-family: 'latomedium';
+          &.active {
+            border: 2px solid black;            
+          }
+        }
+        &>* {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
