@@ -80,7 +80,7 @@ class Helper {
     }
 
     public static function acclayout($file = '') {
-        $layout = AuthAccount::getGroupName();
+        $layout = AuthAccount::getStartPage();
         if (!$layout) {
             $layout = 'default';
         }
@@ -128,10 +128,12 @@ class Helper {
         if (intval($time) == 0) {
             $time = time();
         }
+        $MonthNamesIm = array("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь");
         $MonthNames = array("Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря");
         if (strpos($param, 'M') === false) {
             return date($param, $time);
         } else {
+            $MonthNames = $im ? $MonthNamesIm : $MonthNames;
             $month = $MonthNames[date('n', $time) - 1];
             if ($lower) {
                 $month = mb_strtolower($month);
@@ -378,6 +380,11 @@ HTML;
 
                 #$return .= "\n<!--\n" . $_SERVER['REQUEST_URI'] . "\n" . $menu['link'] . "\n-->\n";
 
+                #if (isset($menu['others'])) {
+                #    Helper::d(@$menu['others']);
+                #    Helper::dd(self::arrayToAttributes($menu['others']));
+                #}
+
                 $additional = isset($menu['others']) ? self::arrayToAttributes($menu['others']) : '';
 
                 $return .= '<a class="' . @$menu['class'] . ($child_exists ? '' : ' margin-bottom-5') . '" href="' . $menu['link'] . '" ' . $additional . '>'
@@ -477,7 +484,7 @@ HTML;
             return $array['content'];
         }
 
-        #Helper::d($array);
+        #Helper::d($array); return;
 
         $return = '';
         #$name = $array['name'];
@@ -486,7 +493,7 @@ HTML;
 
         #var_dump($value);
 
-        $value = (isset($value) && $value !== NULL) ? $value : @$array['default'];
+        $value = (isset($value)) ? $value : @$array['default'];
 
         #echo (int)(isset($value) && $value !== NULL);
         #var_dump($value);
@@ -519,6 +526,8 @@ HTML;
         }
         $others = ' ' . implode(' ', $others);
         #$others_string = self::arrayToAttributes($others_array);
+        #Helper::dd($others_array);
+
         switch (@$array['type']) {
             case 'text':
                 $return = Form::text($name, $value, $others_array);
@@ -561,10 +570,18 @@ HTML;
                 $return = Form::select($name . '[]', $values, $value, $others_array);
                 break;
             case 'checkbox':
+
+                #Helper::d($name);
+                #Helper::d($others_array);
+                #Helper::d($array['title']);
+                #Helper::d($array);
+                #var_dump($value);
+                #return;
+
                 #Helper::d($array);
                 #Helper::ta($element);
                 return '<label class="checkbox">'
-                . Form::checkbox($name, 1, @$element->$array['_name'], $others_array)
+                . Form::checkbox($name, 1, $value, $others_array)
                 . '<i></i>'
                 . '<span>' . $array['title'] . '</span>'
                 . '</label>';
@@ -587,9 +604,23 @@ HTML;
                         . '</label>' . "\n\n";
                     $return .= $el;
                 }
+                $return = '<div class="clearfix">' . $return . '</div>';
                 #Helper::d(htmlspecialchars($return));
                 break;
+            case 'hidden':
+                $return = Form::hidden($name, $value, $others_array);
+                break;
+            case 'textline':
+                if (!$value)
+                    $return = Form::text($name, NULL, $others_array);
+                else
+                    $return = isset($array['view_text']) ? $array['view_text'] : $value;
+                break;
+            case 'custom':
+                $return = @$array['content'];
+                break;
         }
+
         return $return;
     }
 
@@ -600,10 +631,29 @@ HTML;
 
         $line = '';
         foreach ($array as $key => $value) {
-            if (is_string($key) && (is_string($value) || is_int($value))) {
-                $line = $key . '="' . $value . '" ';
+            if (
+                is_string($key)
+                && (
+                    is_string($value) || is_int($value)
+                )
+            ) {
+                $line .= $key . '="' . $value . '" ';
             }
         }
+        $line = trim($line);
+        return $line;
+    }
+
+    public static function arrayToUrlAttributes($array) {
+        if (!@is_array($array) || !@count($array)) {
+            return false;
+        }
+
+        $line = array();
+        foreach ($array as $key => $value) {
+            $line[] = $key . '=' . $value;
+        }
+        $line = implode('&', $line);
         $line = trim($line);
         return $line;
     }
@@ -1083,21 +1133,58 @@ HTML;
 
                     $buffer = trim($buffer, " \r\n\t*");
                     $buffer = explode(':', $buffer);
+
+                    #Helper::d('<hr/>');
                     #Helper::d($buffer);
+                    #Helper::d('<hr/><hr/>');
+
+                    $key = @trim($buffer[0]);
+                    if (!$key)
+                        continue;
 
                     $value = @trim($buffer[1]) ?: true;
-                    if ($value !== true && is_string($value) && mb_strlen($value) && mb_strpos($value, '|')) {
-                        $temp = explode('|', $value);
-                        $value = array();
-                        foreach ($temp as $tmp) {
-                            $tmp = trim($tmp);
-                            if (mb_strpos($tmp, '=')) {
-                                $keyval = explode('=', $tmp, 2);
-                                $value[trim($keyval[0])] = trim($keyval[1]);
-                            } else {
-                                $value[$tmp] = true;
-                            }
+
+                    #Helper::d($buffer[0] . ' ================> ' . @trim($buffer[1]));
+
+                    #if ($key == 'TITLE') {
+                    #    Helper::d($key . ' ================> ' . @trim($buffer[1]));
+                    #}
+
+                    if ($value !== true && is_string($value) && mb_strlen($value)) {
+
+                        if (!mb_strpos($value, '|')) {
+                            $value .= '|';
                         }
+
+                        #if (mb_strpos($value, '|')) {
+
+                            $temp = explode('|', $value);
+                            $value = array();
+
+                            foreach ($temp as $t => $tmp) {
+                                $tmp = trim($tmp);
+                                if (!$tmp)
+                                    unset($temp[$t]);
+                            }
+
+                            foreach ($temp as $tmp) {
+                                $tmp = trim($tmp);
+                                if (!$tmp)
+                                    continue;
+                                #Helper::d($tmp);
+                                if (mb_strpos($tmp, '=')) {
+                                    $keyval = explode('=', $tmp, 2);
+                                    $value[trim($keyval[0])] = trim($keyval[1]);
+                                    #Helper::dd(trim($keyval[0]) . ' === ' . trim($keyval[1]));
+                                } else {
+                                    #Helper::dd($tmp);
+                                    if (count($temp) == 1)
+                                        $value = $tmp;
+                                    else
+                                    $value[$tmp] = true;
+                                }
+                            }
+                        #}
                     }
 
                     $properties[@trim($buffer[0])] = $value;
@@ -1109,6 +1196,10 @@ HTML;
             }
             fclose($handle);
         }
+
+        #Helper::d("PROPERTIES:");
+        #Helper::d($properties);
+
         return $properties;
     }
 
@@ -1149,6 +1240,27 @@ HTML;
             }
         }
         return $enc;
+    }
+
+    /**
+     * https://php.net/manual/ru/function.array-chunk.php
+     *
+     * @param $list
+     * @param $p
+     * @return array
+     */
+    public static function partition($list, $p) {
+        $listlen = count( $list );
+        $partlen = floor( $listlen / $p );
+        $partrem = $listlen % $p;
+        $partition = array();
+        $mark = 0;
+        for ($px = 0; $px < $p; $px++) {
+            $incr = ($px < $partrem) ? $partlen + 1 : $partlen;
+            $partition[$px] = array_slice( $list, $mark, $incr );
+            $mark += $incr;
+        }
+        return $partition;
     }
 }
 

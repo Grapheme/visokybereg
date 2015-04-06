@@ -54,25 +54,18 @@ class BaseController extends Controller {
         return Redirect::route('login');
     }
 
-    public function dashboard($prefix) {
+    public function dashboard() {
 
-        $page_data = array();
-        if (!empty($prefix)):
-            $prefix = str_replace ('-','_',$prefix);
-            if (class_exists('AccountGroupsController') && method_exists('AccountGroupsController',$prefix)):
-                $controller = new AccountGroupsController;
-                $page_data = $controller->$prefix();
-            endif;
-        endif;
+        if (!Auth::check())
+            return self::redirectToLogin();
+
         $parts = array();
         $parts[] = 'templates';
-        $parts[] = AuthAccount::getGroupName();
+        $parts[] = AuthAccount::getStartPage();
         $parts[] = 'dashboard';
 
-        if ($prefix == 'listener' && Listener::where('user_id',Auth::user()->id)->pluck('approved') == FALSE):
-            return Redirect::route('listener-profile-approve')->with('message','YES');
-        endif;
-        return View::make(implode('.', $parts),$page_data);
+#Helper::dd($parts);
+        return View::make(implode('.', $parts));
     }
 
     public function templates($path = '', $post_path = '/views') {

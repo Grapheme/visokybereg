@@ -2,12 +2,12 @@
 
 return array(
     'active'            => TRUE,
-    'test_mode_key'     => 'TSHZVixcD1cLGLSTObouk6Tmo3ChmyxD',
+    'test_mode_key'     => '0nQmGtLoRQeCPhKaaiGFZmYYTLnQ1JhV',
     'post_data'         => array(),
     'git_path'          => '/usr/bin/',
     'remote'            => 'origin',
     'branch'            => 'master',
-    'repository_name'   => 'highcoast',
+    'repository_name'   => 'visokybereg',
     'repository_id'     => 31536647,
     'user_group'        => 'www-data',
     'user_name'         => 'www-data',

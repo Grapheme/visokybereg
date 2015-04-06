@@ -16,7 +16,7 @@ class SystemModules {
 
         $dic_entities = array();
         if (class_exists('AdminDicvalsController')) {
-            $entity_dics = Dic::where('entity', '1')->orderBy('order', 'ASC')->get();
+            $entity_dics = Dic::where('entity', '1')->orderBy(DB::raw('-`order`'), 'DESC')->get();
             #Helper::tad($entity_dics);
             if (count($entity_dics)) {
                 $controller = new AdminDicvalsController;
@@ -62,7 +62,7 @@ class SystemModules {
                         ## If permit to view menu element
                         $rules = @$menu_element['permit'];
                         $module = @$menu_element['module'] ?: $mod_name;
-                        $permit = $rules ? Allow::action($module, $rules, true, true) : true;
+                        $permit = $rules ? Allow::action($module, $rules, true, false) : true;
 
                         #Helper::d($module . " :: " . $permit . " :: " . $rules);
                         #Helper::d( $menu_element['title'] . " - " . (int)$permit );

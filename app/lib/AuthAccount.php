@@ -2,12 +2,17 @@
 
 class AuthAccount {
 	
-    public static function getStartPage($url = NULL){
-
+	public static function getStartPage($url = NULL){
+		
 		$StartPage = '';
 		if(Auth::check()):
-			$StartPage = Auth::user()->group->dashboard;
+			#$StartPage = Auth::user()->groups()->first()->dashboard;
+#Helper::dd(Auth::user()->group);
+            $group = Auth::user()->group;
+			#$StartPage = $group->start_url ? $group->start_url : $group->dashboard;
+			$StartPage = $group->dashboard;
 		endif;
+        #Helper::dd($StartPage);
 		if(!is_null($url)):
 			return $StartPage.'/'.$url;
 		else:
