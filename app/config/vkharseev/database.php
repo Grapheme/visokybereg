@@ -4,7 +4,7 @@ return array(
 	'connections' => array(
 		'mysql' => array(
 			'host'      => 'localhost',
-			'database'  => 'highcoast',
+			'database'  => 'visokiy_bereg',
 			'username'  => 'root',
 			'password'  => '',
 		),
