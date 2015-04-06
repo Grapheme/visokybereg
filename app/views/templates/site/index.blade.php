@@ -18,7 +18,8 @@
             <div class="where">
                 <div class="ico-mark"><img src="{{ asset(Config::get('site.theme_path')) }}/images/ico-mark.png"></div>
                 <div class="title">{{ $page->block('address') }}</div>
-            </div><a href="{{ pageurl('projects') }}" class="btn">Выбрать дом</a>
+            </div>
+            <!--<a href="{{ pageurl('projects') }}" class="btn">Выбрать дом</a>-->
         </div>
     </div>
 @stop

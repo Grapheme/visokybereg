@@ -13,6 +13,8 @@
     <div class="content square-list">
         <div class="holder">
             <h1>{{ $page->seo->h1 }}</h1>
+        @if(FALSE)
+            @foreach($projects as $project)
             <a href="" class="unit">
                 <div style="background-image:url('http://dummyimage.com/497x305/');" class="visual"></div>
                 <div class="info">
@@ -25,6 +27,8 @@
                     </div>
                 </div>
             </a>
+            @endforeach
+        @endif
         </div>
         <div class="row">
             <div class="text">
