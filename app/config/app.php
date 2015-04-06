@@ -10,7 +10,7 @@ return array(
 	'use_scripts_local' => FALSE,
 	
 	'default_page_title' => 'Default page title',
-	'template' => 'default',
+	'template' => 'site',
     'welcome_page_tpl' => 'templates.site.index', #'guests.welcome',
 
 
@@ -58,7 +58,6 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
         'Illuminate\Custom\CustomUrlServiceProvider',
         'Flynsarmy\DbBladeCompiler\DbBladeCompilerServiceProvider',
         'Scalia\SphinxSearch\SphinxSearchServiceProvider',

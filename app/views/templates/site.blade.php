@@ -15,7 +15,9 @@
 @section('description'){{ $seo->description }}@stop
 @section('keywords'){{ $seo->keywords }}@stop
 @endif
-@section('page_class')index @stop
+@section('page_class')
+index
+@stop
 <!DOCTYPE html>
 <html class="@yield('page_class') no-js" style="@yield('page_style')">
 <head>

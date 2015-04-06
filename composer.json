@@ -8,7 +8,6 @@
 		"way/generators": "2.6.*",
 		"intervention/image": "2.1.*",
 		"barryvdh/laravel-ide-helper": "1.*",
-		"barryvdh/laravel-debugbar": "1.8.*",
 		"scalia/sphinxsearch": "*",
 		"flynsarmy/db-blade-compiler": "1.*",
         "sngrl/string-blade-compiler": "dev-master",
@@ -33,7 +32,6 @@
 		"post-update-cmd": [
 			"php artisan clear-compiled",
             "php artisan ide-helper:generate",
-            "php artisan debugbar:publish",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
