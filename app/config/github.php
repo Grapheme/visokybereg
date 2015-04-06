@@ -8,7 +8,7 @@ return array(
     'remote'            => 'origin',
     'branch'            => 'master',
     'repository_name'   => 'visokybereg',
-    'repository_id'     => 31536647,
+    'repository_id'     => 33303737,
     'user_group'        => 'www-data',
     'user_name'         => 'www-data',
     'set_log'           => TRUE,
