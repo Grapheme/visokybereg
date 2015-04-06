@@ -25,13 +25,13 @@
                         <div class="title">Таунхаусы</div><strong>{{ $page->block('townhouses') }}</strong>
                     </div>
                     <div class="unit">
-                        <a href="javascript:void(0);" class="download-file">
+                        <!--<a href="javascript:void(0);" class="download-file">
                             <img src="{{ asset(Config::get('site.theme_path').'/images/ico-pdf.png') }}" class="ico">
                             <div class="info">
                                 <div class="filename">Генеральный план.pdf</div>
                                 <div class="size">12мб</div>
                             </div>
-                        </a>
+                        </a>-->
                     </div>
                 </div>
             </div>
@@ -47,6 +47,7 @@
             <div class="row scheme">
                 <div class="visual"><img src="{{ asset(Config::get('site.theme_path').'/images/visual-map-scheme-interactive.png') }}"></div>
                 <div class="side">
+                <!--
                     <div class="unit">
                         <div class="head"><img src="{{ asset(Config::get('site.theme_path').'/images/ico-house-1.png') }}" class="ico">
                             <div class="title">1 Этажные</div>
@@ -66,6 +67,7 @@
                             <li><a href="">141 м<sup>2</sup></a></li>
                         </ul>
                     </div>
+                -->
                 </div>
             </div>
             <div class="row">
