@@ -24,7 +24,7 @@
                 <div class="row"><a href="tel:+79282263653">+7 (928) 226-36-53</a></div>
             </div>
         </div>
-        <div class="right">Сделано в <a href="grapheme.ru">ГРАФЕМА</a></div>
+        <div class="right">Сделано в <a target="_blank" href="http://grapheme.ru">ГРАФЕМА</a></div>
         <div class="clrfx"></div>
     </div>
 </footer>
