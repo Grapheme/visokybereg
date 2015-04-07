@@ -51,20 +51,13 @@
                         <div class="head"><img src="{{ asset(Config::get('site.theme_path').'/images/ico-house-1.png') }}" class="ico">
                             <div class="title">1 Этажные</div>
                         </div>
-                        <ul class="section">
-                            <li><a href="" class="active">67 м<sup>2</sup></a></li>
-                            <li><a href="">75 м<sup>2</sup></a></li>
-                            <li><a href="">89 м<sup>2</sup></a></li>
-                        </ul>
+                        {{ Menu::placement('1_etazhnye_menu') }}
                     </div>
                     <div class="unit">
                         <div class="head"><img src="{{ asset(Config::get('site.theme_path').'/images/ico-house-2.png') }}" class="ico">
                             <div class="title">2 Этажные</div>
                         </div>
-                        <ul class="section">
-                            <li><a href="">138 м<sup>2</sup></a></li>
-                            <li><a href="">141 м<sup>2</sup></a></li>
-                        </ul>
+                        {{ Menu::placement('1_etazhnye_menu') }}
                     </div>
                 </div>
             </div>

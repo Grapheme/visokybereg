@@ -1,6 +1,6 @@
 <?
 /**
- * MENU_PLACEMENTS: main_menu=Основное меню
+ * MENU_PLACEMENTS: main_menu=Основное меню|1_etazhnye_menu=Меню проектов, одноэтажные|2_etazhnye_menu=Меню проектов, двухэтажные
  */
 ?>
 @if (@is_object($page->meta->seo))
