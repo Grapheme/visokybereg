@@ -206,6 +206,9 @@ body {
             }
             .unit {
               margin-bottom: 36px;
+              display: block;
+              text-decoration: none;
+              color: inherit;
               .head {
                 img {
                   display: inline-block;
@@ -233,7 +236,6 @@ body {
                   &.active {
                     border: 2px solid black;
                     border-radius: 2px;
-
                   }
                 }
               }
