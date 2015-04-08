@@ -25,13 +25,7 @@
                         <div class="title">Таунхаусы</div><strong>{{ $page->block('townhouses') }}</strong>
                     </div>
                     <div class="unit">
-                        <a href="{{ $page->block('general_plan') }}" class="download-file">
-                            <img src="{{ asset(Config::get('site.theme_path').'/images/ico-pdf.png') }}" class="ico">
-                            <div class="info">
-                                <div class="filename">Генеральный план.pdf</div>
-                                <div class="size">12мб</div>
-                            </div>
-                        </a>
+                        {{ $page->block('general_plan') }}
                     </div>
                 </div>
             </div>

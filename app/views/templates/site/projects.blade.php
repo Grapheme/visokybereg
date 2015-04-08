@@ -13,6 +13,7 @@
     <div class="content square-list">
         <div class="holder">
             <h1>{{ $page->seo->h1 }}</h1>
+            {{ $page->block('kottedjnyy-poselok') }}
     @if(count($page->blocks))
         @foreach($page->blocks as $slug => $block)
             @if(substr($slug,0,7) == 'project')
