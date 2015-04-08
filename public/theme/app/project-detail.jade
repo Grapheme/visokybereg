@@ -102,13 +102,21 @@ block content
             strong для 1 автомобиля
       .row.nomargin.visual-hover
         .text
-          .project-visual-wrapper
-            img(src="/images/visual-detail-project.png")
+          .project-visual-wrapper.stages
+            .stage
+              img(src="/images/visual-detail-project.png")
+            .stage
+              img(src="http://dummyimage.com/700x700/")
         .side
-          .unit
-            .head
-              img.ico(src="/images/ico-digit-1.png")
-              .title Этаж
+          .stages
+            a.unit(href="")
+              .head
+                img.ico(src="/images/ico-digit-1.png")
+                .title Этаж
+            a.unit(href="")
+              .head
+                img.ico(src="/images/ico-digit-2.png")
+                .title Этаж
           .unit
             a.download-file(href="")
               img.ico(src="/images/ico-pdf.png")
