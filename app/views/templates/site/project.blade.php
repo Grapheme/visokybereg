@@ -38,9 +38,7 @@
                     <h1>{{ $page->seo->h1 }}</h1>
                     {{ $page->block('small_description') }}
                 </div>
-                <div class="side">
-                    <div class="title">Цена</div><strong>{{ $page->block('price') }}</strong>
-                </div>
+                {{ $page->block('price_lists') }}
             </div>
             <div class="row">
                 <div class="visual-with-points">
@@ -52,15 +50,8 @@
                     {{ $page->block('description') }}
                 </div>
                 <div class="side">
-                    <div class="unit">
-                        <div class="title">Жилая площадь</div><strong>{{ $page->block('zhilaya-ploshhad') }}</strong>
-                    </div>
-                    <div class="unit">
-                        <div class="title">Участок</div><strong>{{ $page->block('uchastok') }}</strong>
-                    </div>
-                    <div class="unit">
-                        <div class="title">Автостоянка</div><strong>{{ $page->block('avtostoyanka') }}</strong>
-                    </div>
+                    {{ $page->block('price_description') }}
+                    {{ $page->block('unit_lists') }}
                 </div>
             </div>
             <div class="row nomargin visual-hover">
