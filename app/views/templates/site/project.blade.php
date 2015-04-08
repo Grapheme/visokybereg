@@ -38,7 +38,9 @@
                     <h1>{{ $page->seo->h1 }}</h1>
                     {{ $page->block('small_description') }}
                 </div>
+                <div class="side">
                 {{ $page->block('price_lists') }}
+                </div>
             </div>
             <div class="row">
                 <div class="visual-with-points">
