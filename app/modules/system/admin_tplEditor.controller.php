@@ -118,19 +118,19 @@ class AdminTplEditorController extends BaseController {
             #    $config['test_mode'] = FALSE;
             #endif;
 
-            $config['set_log'] = FALSE;
+            $config['set_log'] = TRUE;
 
             $github = new GitHub();
             $github->init($config);
             $result = $github->execute('git add ' . $full_file);
-            echo $result . "\n";
+            #echo $result . "\n";
             if ($result == 0) {
                 $result = $github->execute('git commit -m "server commit - template editor; module: ' . $mod_name . ', file: ' . $file . '"');
                 #echo $result . "\n";
                 if ($result == 0) {
-                    $result = $github->pull();
+                    #$result = $github->pull();
                     echo $result . "\n";
-                    $result = $github->push();
+                    #$result = $github->push();
                     echo $result . "\n";
                 }
             }
