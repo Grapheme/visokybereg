@@ -170,7 +170,7 @@ class GitHub {
         endif;
 
         try {
-            exec($this->git_path.'git push '.$this->remote.' '.$this->branch.' 2>&1', $result, $returnCode);
+            exec($this->git_path.'git push -u '.$this->remote.' '.$this->branch.' 2>&1', $result, $returnCode);
         } catch (Exception $e) {
             return 'Невозможно вызвать комманду git push'. $this->remote.' '.$this->branch;
         }
