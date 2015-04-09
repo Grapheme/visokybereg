@@ -6,8 +6,11 @@ $(function() {
     var size = $stages.size()-1;
     var cur = $(this).index($stage_btns);
     
-    $stages.fadeOut(100);
-    $stages.eq(cur).fadeIn(200);
+    $stages.fadeOut(100, function(){
+      $stages.eq(cur).fadeIn(200, function(){
+        $( window ).resize();
+      });
+    });
     e.preventDefault();
   });
   

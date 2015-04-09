@@ -14,3 +14,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ HTML::stylemod(Config::get('site.theme_path').'/styles/main.css') }}
 {{ HTML::scriptmod(Config::get('site.theme_path').'/scripts/vendor/modernizr.js') }}
+<link rel="icon" type="image/png" href="{{ Config::get('site.theme_path') }}/images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="{{ Config::get('site.theme_path') }}/images/favicon-16x16.png" sizes="16x16" />
