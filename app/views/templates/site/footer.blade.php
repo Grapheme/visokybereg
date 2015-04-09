@@ -3,7 +3,6 @@
  * TEMPLATE_IS_NOT_SETTABLE
  */
 ?>
-
 <footer>
     <hr>
     <div class="holder">
