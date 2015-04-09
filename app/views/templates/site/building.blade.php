@@ -58,7 +58,9 @@
                     <h2>{{ $page->block('individualnoe-stroitelstvo') }}</h2>
                     {{ $page->block('individualnoe-stroitelstvo-text') }}
                 </div>
+                <div class="side">
                 {{ $page->block('indstroitelstvossylki') }}
+                </div>
             </div>
         </div>
         <div class="holder col-2 wside">
