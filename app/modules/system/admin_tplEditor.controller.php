@@ -110,7 +110,7 @@ class AdminTplEditorController extends BaseController {
          */
 
         $config = Config::get('github');
-        #Helper::dd(class_exists('GitHub'));
+        Helper::dd(class_exists('GitHub'));
         if ($config['active'] != FALSE && Input::get('git') && class_exists('GitHub')) {
 
             #if($config['test_mode_key'] == $extends):
