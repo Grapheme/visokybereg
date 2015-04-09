@@ -9,13 +9,18 @@ body.index {
   }
   h1 {
     font-size: 62px;
+    color: #132236 !important;
   }
   .about {
     font-size: 21px;
   }
+  .holder {
+    color: #132236 !important;
+  }
   .where {
     margin-top: 34px;
     margin-bottom: 40px;
+    color: #132236 !important;
     .ico-mark {
       display: inline-block;
       vertical-align: middle;
@@ -24,10 +29,12 @@ body.index {
     .title {
       display: inline-block;
       vertical-align: middle;
+      color: #132236 !important;
     }
   }
   footer {
     background: none;
+    color: white;
     .center {
       display: none;
     }

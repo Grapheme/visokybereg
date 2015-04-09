@@ -4,13 +4,15 @@ $(function() {
   
   $stage_btns.click(function(e){
     var size = $stages.size()-1;
-    var cur = $(this).index($stage_btns);
+    var cur = $stage_btns.index($(this));
+    $stages.hide()
     
-    $stages.fadeOut(100, function(){
+    
       $stages.eq(cur).fadeIn(200, function(){
+        console.log('2')
         $( window ).resize();
       });
-    });
+    
     e.preventDefault();
   });
   
