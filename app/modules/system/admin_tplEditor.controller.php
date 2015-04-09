@@ -110,6 +110,7 @@ class AdminTplEditorController extends BaseController {
          */
 
         $config = Config::get('github');
+        #Helper::dd(class_exists('GitHub'));
         if ($config['active'] != FALSE && Input::get('git') && class_exists('GitHub')) {
 
             #if($config['test_mode_key'] == $extends):
@@ -118,12 +119,12 @@ class AdminTplEditorController extends BaseController {
             #    $config['test_mode'] = FALSE;
             #endif;
 
-            $config['set_log'] = FALSE;
+            $config['set_log'] = TRUE;
 
             $github = new GitHub();
             $github->init($config);
             $result = $github->execute('git add ' . $full_file);
-            #echo $result . "\n";
+            #echo $result . "\n"; die;
             if ($result == 0) {
                 $result = $github->execute('git commit -m "server commit - template editor; module: ' . $mod_name . ', file: ' . $file . '"');
                 #echo $result . "\n";
