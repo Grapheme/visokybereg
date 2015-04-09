@@ -6,7 +6,7 @@
 <footer>
     <hr>
     <div class="holder">
-        <div class="left">&copy; 2014 - {{ date('Y') }}, «Высокий берег»</div>
+        <div class="left">&copy; 2014–{{ date('Y') }}, «Высокий берег»</div>
         <div class="center">
             <div class="unit">
                 <div class="title">Отдел продаж</div>
