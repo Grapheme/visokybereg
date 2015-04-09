@@ -118,7 +118,7 @@ class AdminTplEditorController extends BaseController {
             #    $config['test_mode'] = FALSE;
             #endif;
 
-            $config['set_log'] = FALSE;
+            $config['set_log'] = TRUE;
 
             $github = new GitHub();
             $github->init($config);
