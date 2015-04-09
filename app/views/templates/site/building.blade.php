@@ -58,6 +58,7 @@
                     <h2>{{ $page->block('individualnoe-stroitelstvo') }}</h2>
                     {{ $page->block('individualnoe-stroitelstvo-text') }}
                 </div>
+                {{ $page->block('indstroitelstvossylki') }}
             </div>
         </div>
         <div class="holder col-2 wside">
