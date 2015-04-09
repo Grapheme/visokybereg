@@ -1,6 +1,7 @@
 <?
 /**
  * TEMPLATE_IS_NOT_SETTABLE
+ * TEMPLATE_IS_NOT_SETTABLE
  */
 ?>
 <footer>
@@ -31,13 +32,9 @@
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
         try {
-            w.yaCounter29595730 = new Ya.Metrika({id:29595730,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
+            w.yaCounter29595730 = new Ya.Metrika({id:29595730,clickmap:true,trackLinks:true,accurateTrackBounce:true});
         } catch(e) { }
     });
-
     var n = d.getElementsByTagName("script")[0],
         s = d.createElement("script"),
         f = function () { n.parentNode.insertBefore(s, n); };
