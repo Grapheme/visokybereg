@@ -1,6 +1,6 @@
 <?php
 
-class GithubController extends \BaseController {
+class GitHub extends \BaseController {
 
     public static $name = 'github';
     public static $group = 'production';
