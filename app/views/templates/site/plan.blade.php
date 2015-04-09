@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="row scheme">
-                <div class="visual"><img src="{{ asset(Config::get('site.theme_path').'/images/visual-map-scheme-interactive.png') }}"></div>
+                <div class="visual"><img src="/uploads/files/1428587812_1671.png"></div>
                 <div class="side">
                     {{ $page->block('plan_types') }}
                 </div>
