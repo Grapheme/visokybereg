@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row wide">
-                <img src="{{ asset(Config::get('site.theme_path').'/images/visual-map-scheme.png') }}" class="visual map">
+                <img src="/uploads/files/1428587812_1671.png" class="visual map">
             </div>
             <div class="row">
                 <div class="text">
