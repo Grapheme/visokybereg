@@ -176,7 +176,7 @@ class GitHub {
         }
 
         if($this->set_log):
-            echo "\nCommand:\n".$this->git_path.'git push '.$this->remote.' '.$this->branch;
+            echo "\nCommand:\n".$this->git_path.'git push -u '.$this->remote.' '.$this->branch;
             echo "\nResult:\n"; print_r($result);
             echo "\nCode:\n"; print_r($returnCode);
         endif;
