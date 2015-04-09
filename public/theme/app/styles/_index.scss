@@ -14,7 +14,7 @@ body.index {
   .about {
     font-size: 21px;
   }
-  .holder {
+  &>.holder {
     color: #132236 !important;
   }
   .where {
