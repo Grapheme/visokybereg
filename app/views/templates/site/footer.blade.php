@@ -12,7 +12,7 @@
             <div class="unit">
                 <div class="title">Отдел продаж</div>
                 <div class="row"><a href="tel:+79034016623">+7 (903) 401-66-23</a><span class="name">&nbsp; Ольга</span></div>
-                <div class="row"><a href="tel:+79286133928">+7 (928) 613-39-28</a><span class="name">&nbsp; Виктория</span></div>
+                <!--<div class="row"><a href="tel:+79286133928">+7 (928) 613-39-28</a><span class="name">&nbsp; Виктория</span></div>-->
             </div>
             <div class="unit">
                 <div class="title">Юридический отдел</div>
