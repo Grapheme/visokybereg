@@ -128,10 +128,10 @@ class AdminTplEditorController extends BaseController {
                 $result = $github->execute('git commit -m "server commit - template editor; module: ' . $mod_name . ', file: ' . $file . '"');
                 #echo $result . "\n";
                 if ($result == 0) {
-                    #$result = $github->pull();
-                    echo $result . "\n";
-                    #$result = $github->push();
-                    echo $result . "\n";
+                    $result = $github->pull();
+                    #echo $result . "\n";
+                    $result = $github->push();
+                    #echo $result . "\n";
                 }
             }
         }
