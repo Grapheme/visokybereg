@@ -41,18 +41,7 @@
             <div class="row scheme">
                 <div class="visual"><img src="{{ asset(Config::get('site.theme_path').'/images/visual-map-scheme-interactive.png') }}"></div>
                 <div class="side">
-                    <div class="unit">
-                        <div class="head"><img src="{{ asset(Config::get('site.theme_path').'/images/ico-house-1.png') }}" class="ico">
-                            <div class="title">1 Этажные</div>
-                        </div>
-                        {{ Menu::placement('1_etazhnye_menu') }}
-                    </div>
-                    <div class="unit">
-                        <div class="head"><img src="{{ asset(Config::get('site.theme_path').'/images/ico-house-2.png') }}" class="ico">
-                            <div class="title">2 Этажные</div>
-                        </div>
-                        {{ Menu::placement('1_etazhnye_menu') }}
-                    </div>
+                    {{ $page->block('plan_types') }}
                 </div>
             </div>
             <div class="row">
